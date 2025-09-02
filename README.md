@@ -1,4 +1,7 @@
 # Jaguar FinOps — Tagging guardrails from day‑zero
+
+Proyecto que se encarga de desarrollar guardrails de gobierno en AWS Organizations para garantizar la disciplina de etiquetado que FinOps necesita. El proyecto aplica una SCP (Service Control Policy) “require-tags” (p. ej. CostCenter, Owner, Environment) a OUs seleccionadas; define Tag Policies con valores permitidos/patrones; y complementa con Config rules y funciones de auto-tag para casos especiales (como S3). El objetivo es que todo recurso nazca etiquetado, mejorando la calidad del CUR y la atribución de costos. Se entrega como CDK reutilizable y documentado para despliegue seguro por etapas (Sandbox → Workloads).
+
 **Objetivo:** garantizar que *toda* carga en AWS nazca con etiquetas FinOps correctas y que los costos puedan atribuirse desde el día 1.
 
 **Pilares del proyecto**
@@ -100,3 +103,6 @@ Configura en `tag-enforcer-stack.ts` o como **env vars** de la función:
 - `REQUIRED_TAG_KEYS` (CSV): `Owner,Environment,CostCenter,Application`
 - `DEFAULT_TAGS_JSON`: `{"Environment":"sandbox"}`
 - `ALLOWED_ENV_VALUES` (CSV): `prod,staging,dev,sandbox`
+
+## Autor
+Paul Rivera
