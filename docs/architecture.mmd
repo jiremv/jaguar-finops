@@ -1,0 +1,8 @@
+flowchart LR
+  DEV[Desarrolladores] -->|Create*| OU["AWS Accounts / OU"]
+  OU -->|SCP evalúa| ORG_SCP["AWS Organizations<br/>Service Control Policy"]
+  OU -->|EventBridge| EVT["Amazon EventBridge<br/>(AWS API Call via CloudTrail)"]
+  EVT --> LMB["Lambda Tag Enforcer"]
+  LMB --> SNS["Amazon SNS<br/>Alertas/Notificaciones"]
+  ORG_SCP -. Opcional .-> ORG_TAG["AWS Organizations<br/>Tag Policies"]
+  OU -. Opcional .-> BUD["AWS Budgets<br/>por etiqueta"]

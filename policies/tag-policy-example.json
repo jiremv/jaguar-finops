@@ -1,0 +1,38 @@
+{
+  "tags": {
+    "Environment": {
+      "tag_key": {
+        "enforced_for": [
+          "ec2:instance",
+          "s3:bucket",
+          "rds:db",
+          "lambda:function"
+        ]
+      },
+      "tag_value": {
+        "allowed_values": [
+          "prod",
+          "staging",
+          "dev",
+          "sandbox"
+        ]
+      }
+    },
+    "Owner": {
+      "tag_key": {},
+      "tag_value": {
+        "constraints": {
+          "case_sensitive": false
+        }
+      }
+    },
+    "CostCenter": {
+      "tag_key": {},
+      "tag_value": {}
+    },
+    "Application": {
+      "tag_key": {},
+      "tag_value": {}
+    }
+  }
+}
